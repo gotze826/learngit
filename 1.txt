@@ -1,4 +1,1 @@
-123
-123
-141
-1
+this is for dbms
