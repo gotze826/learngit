@@ -1,0 +1,36 @@
+{
+  "actions": {
+    "USER_INCR": {
+      "feature_retrieve": [
+          "UserCtr"
+      ],
+      "save_counter": [
+          "UserNumIncr"
+      ]
+    },
+    "USER_DECR": {
+      "feature_retrieve": [
+          "UserCtr"
+      ],
+      "save_counter": [
+          "UserNumDecr"
+      ]
+    },
+    "USER_FREQ_INCR": {
+      "feature_retrieve": [
+          "UserFreq"
+      ],
+      "save_counter": [
+          "UserFreqIncr"
+      ]
+    },
+    "USER_FREQ_DECR": {
+      "feature_retrieve": [
+          "UserFreq"
+      ],
+      "save_counter": [
+          "UserFreqDecr"
+      ]
+    }
+  }
+}
