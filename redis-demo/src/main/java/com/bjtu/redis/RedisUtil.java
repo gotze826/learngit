@@ -173,4 +173,5 @@ public class RedisUtil {
     public long hdecr(String key, String item,long by){
         return redisTemplate.hincrBy(key, item,-by);
     }
+
 }

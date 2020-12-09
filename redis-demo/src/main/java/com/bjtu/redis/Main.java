@@ -27,7 +27,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-        redisUtil = new RedisUtil(JedisInstance.getInstance().getResource());
+        redisUtil = new RedisUtil(ActionSpec.jedis);
         m.monitor("src/json/", new FileListener());
         m.start();
         LoadJson();
@@ -69,6 +69,8 @@ public class Main {
         System.out.println("2.USER_DECR");
         System.out.println("3.USER_FREQ_INCR");
         System.out.println("4.USER_FREQ_DECR");
+        System.out.println("5.Show List");
+        System.out.println("6.Show Set");
         System.out.println("请选择：");
     }
 
@@ -89,6 +91,12 @@ public class Main {
                 break;
             case "4":
                 input_action("USER_FREQ_DECR");
+                break;
+            case "5":
+                ActionSpec.showList();
+                break;
+            case "6":
+                ActionSpec.showSet();
                 break;
             default:
                 System.out.println("输入错误");

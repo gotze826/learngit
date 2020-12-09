@@ -1,8 +1,12 @@
 package com.bjtu.redis;
 
+import redis.clients.jedis.Jedis;
+
 import java.util.List;
+import java.util.Set;
 
 public class ActionSpec {
+    public static Jedis jedis= JedisInstance.getInstance().getResource();
     /**
      * 操作类型-枚举
      */
@@ -16,6 +20,7 @@ public class ActionSpec {
     private ActionType type;
     private List<String> feature_retrieve;
     private List<String> save_counter;
+
 
     public String getType() {
         return type.name();
@@ -55,6 +60,21 @@ public class ActionSpec {
 
     public void setSave_counter(List<String> save_counter) {
         this.save_counter = save_counter;
+    }
+
+    public static void showList(){
+        List<String> list = jedis.lrange("UserList", 0, -1 );
+        System.out.println(list);
+    }
+
+    public static void showSet(){
+        Set<String> set = jedis.smembers("UserSet");
+        System.out.println(set);
+    }
+
+    public void showZSet(){
+        Set<String> zset = jedis.zrange("UserZSet", 0, -1);
+        System.out.println(zset);
     }
 
 }
